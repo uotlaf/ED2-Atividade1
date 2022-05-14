@@ -4,7 +4,7 @@ import Estruturas.*;
 public class Main {
     public static void main(String[] args) {
         Generico<Integer, Integer> [] vetor = new Generico[10];
-        Ordenador algoritmo = new MergeSort();
+        Ordenador algoritmo = new HeapSort();
 
         vetor[0]  = new Generico<Integer, Integer>(2, 3);
         vetor[1]  = new Generico<Integer, Integer>(3, 9);
