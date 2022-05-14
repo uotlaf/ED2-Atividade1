@@ -33,7 +33,6 @@ public class Generico<Chave, Valor> implements Comparable{
         if (this.valor instanceof Integer) {
             return ((Integer) this.valor).compareTo((Integer)objeto.valor);
         } else if (this.valor instanceof Double) {
-            System.out.println("Entrou");
             return ((Double) this.valor).compareTo((Double) objeto.valor);
         }
         // Caso nenhum dos acima, considere string
