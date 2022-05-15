@@ -251,10 +251,12 @@ public class                                            Main {
                         System.out.println("5 - Merge Sort + Insert Sort");
                         System.out.println("6 - Heap Sort");
                         System.out.println("7 - Faster Select Sort");
+                        System.out.println("8 - JDK Array Sort");
+                        System.out.println("9 - JDK Collection Sort");
 
                         try {
                             resposta = scanner.nextInt();
-                            if (resposta < 1 || resposta > 7) continue;
+                            if (resposta < 1 || resposta > 9) continue;
                         } catch (InputMismatchException e) {
                             scanner.next();
                             continue;
@@ -281,6 +283,12 @@ public class                                            Main {
                                 break;
                             case 7:
                                 algoritmo = new FasterSelectSort();
+                                break;
+                            case 8:
+                                algoritmo = new JDKArraySort();
+                                break;
+                            case 9:
+                                algoritmo = new JDKCollectionSort();
                                 break;
                             default:
                                 System.out.println("Algoritmo desconhecido");
