@@ -19,57 +19,58 @@ public class FasterSelectSort implements Ordenador {
     private void FasterSelectSort(Generico<?, ?>[] vetor) {
         // Itera no início e no fim ao mesmo tempo
         // Vai adicionando no início e tirando do fim
-        int fim = vetor.length - 1;
-        for (int i = 0; i < fim; i++, fim--) {
-            int min = i;
-            int max = fim;
+        int fim = vetor.length - 1; atribuicoes++;
+        for (int i = 0; i < fim; i++, fim--) { atribuicoes++; comparacoes++; atribuicoes++;
+            int min = i; atribuicoes++;
+            int max = fim; atribuicoes++;
 
-            for (int j = i + 1, k = fim - 1; j <= fim; j++, k--) {
-                if (vetor[j].compareTo(vetor[min]) < 0)
-                    min = j;
+            for (int j = i + 1, k = fim - 1; j <= fim; j++, k--) { atribuicoes++; atribuicoes++; comparacoes++; atribuicoes++; atribuicoes++;
+                if (vetor[j].compareTo(vetor[min]) < 0) comparacoes++;
+                    min = j; atribuicoes++;
 
-                if (vetor[k].compareTo(vetor[max]) > 0)
-                    max = k;
+                if (vetor[k].compareTo(vetor[max]) > 0) comparacoes++;
+                    max = k; atribuicoes++;
             }
-            Generico<?, ?> temp = vetor[i];
-            vetor[i] = vetor[min];
-            vetor[min] = temp;
+            Generico<?, ?> temp = vetor[i]; atribuicoes++;
+            vetor[i] = vetor[min]; atribuicoes++;
+            vetor[min] = temp; atribuicoes++;
 
-            if (max == i)
-                max = min;
+            if (max == i) atribuicoes++;
+                max = min; atribuicoes++;
 
-            temp = vetor[fim];
-            vetor[fim] = vetor[max];
-            vetor[max] = temp;
+            temp = vetor[fim]; atribuicoes++;
+            vetor[fim] = vetor[max]; atribuicoes++;
+            vetor[max] = temp; atribuicoes++;
         }
     }
 
     private void FasterSelectSortInvertido(Generico<?, ?>[] vetor) {
         // Itera no início e no fim ao mesmo tempo
         // Vai adicionando no início e tirando do fim
-        int fim = vetor.length - 1;
-        for (int i = 0; i < fim; i++, fim--) {
-            int min = i;
-            int max = fim;
+        int fim = vetor.length - 1; atribuicoes++;
+        for (int i = 0; i < fim; i++, fim--) { atribuicoes++; comparacoes++; atribuicoes++; atribuicoes++;
+            int min = i; atribuicoes++;
+            int max = fim; atribuicoes++;
 
-            for (int j = i + 1, k = fim - 1; j <= fim; j++, k--) {
-                System.out.println("Passou");
-                if (vetor[j].compareTo(vetor[min]) > 0)
-                    min = j;
+            for (int j = i + 1, k = fim - 1; j <= fim; j++, k--) { atribuicoes++; atribuicoes++; comparacoes++; atribuicoes++; atribuicoes++;
+                if (vetor[j].compareTo(vetor[min]) > 0) comparacoes++;
+                    min = j; comparacoes++;
 
-                if (vetor[k].compareTo(vetor[max]) < 0)
-                    max = k;
+                if (vetor[k].compareTo(vetor[max]) < 0) { comparacoes++;
+                    max = k; atribuicoes++;
+                }
             }
-            Generico<?, ?> temp = vetor[i];
-            vetor[i] = vetor[min];
-            vetor[min] = temp;
+            Generico<?, ?> temp = vetor[i]; atribuicoes++;
+            vetor[i] = vetor[min]; atribuicoes++;
+            vetor[min] = temp; atribuicoes++;
 
-            if (max == i)
-                max = min;
+            if (max == i) { comparacoes++;
+                max = min; atribuicoes++;
+            }
 
-            temp = vetor[fim];
-            vetor[fim] = vetor[max];
-            vetor[max] = temp;
+            temp = vetor[fim]; atribuicoes++;
+            vetor[fim] = vetor[max]; atribuicoes++;
+            vetor[max] = temp; atribuicoes++;
         }
     }
 

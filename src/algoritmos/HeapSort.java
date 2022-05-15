@@ -28,57 +28,57 @@ public class HeapSort implements Ordenador{
 
     public void HeapSortInvertido(Generico<?, ?>[] vetor) {
         buildMinHeap(vetor, vetor.length-1);
-        for (int i = vetor.length-1; i >= 1 ; i--) {
-            Generico<?, ?> temp = vetor[0];
-            vetor[0] = vetor[i];
-            vetor[i] = temp;
+        for (int i = vetor.length-1; i >= 1 ; i--) { atribuicoes++; comparacoes++; atribuicoes++;
+            Generico<?, ?> temp = vetor[0]; atribuicoes++;
+            vetor[0] = vetor[i]; atribuicoes++;
+            vetor[i] = temp; atribuicoes++;
             minHeapify(vetor, 0, i - 1);
         }
     }
 
-    private static void maxHeapify(Generico<?, ?>[] vetor, int indice, int tamanho) {
-        int esq = 2*indice;
-        int dir = 2*indice+1;
+    private void maxHeapify(Generico<?, ?>[] vetor, int indice, int tamanho) {
+        int esq = 2*indice; atribuicoes++;
+        int dir = 2*indice+1; atribuicoes++;
         int maior;
 
-        if (esq <= tamanho && vetor[esq].compareTo(vetor[indice]) > 0) {
-            maior = esq;
+        if (esq <= tamanho && vetor[esq].compareTo(vetor[indice]) > 0) { comparacoes++; comparacoes++;
+            maior = esq; atribuicoes++;
         } else {
-            maior = indice;
+            maior = indice; atribuicoes++;
         }
 
-        if (dir <= tamanho && vetor[dir].compareTo(vetor[maior]) > 0) {
-            maior = dir;
+        if (dir <= tamanho && vetor[dir].compareTo(vetor[maior]) > 0) { comparacoes++; comparacoes++;
+            maior = dir; atribuicoes++;
         }
 
-        if (maior != indice) {
-            Generico<?, ?> temp = vetor[maior];
-            vetor[maior] = vetor[indice];
-            vetor[indice] = temp;
+        if (maior != indice) { comparacoes++;
+            Generico<?, ?> temp = vetor[maior]; atribuicoes++;
+            vetor[maior] = vetor[indice]; atribuicoes++;
+            vetor[indice] = temp; atribuicoes++;
 
             maxHeapify(vetor, maior, tamanho);
         }
     }
 
-    private static void minHeapify(Generico<?, ?>[] vetor, int indice, int tamanho) {
-        int esq = 2*indice;
-        int dir = 2*indice+1;
+    private void minHeapify(Generico<?, ?>[] vetor, int indice, int tamanho) {
+        int esq = 2*indice; atribuicoes++;
+        int dir = 2*indice+1; atribuicoes++;
         int menor;
 
-        if (esq <= tamanho && vetor[esq].compareTo(vetor[indice]) < 0) {
-            menor = esq;
+        if (esq <= tamanho && vetor[esq].compareTo(vetor[indice]) < 0) { comparacoes++; comparacoes++;
+            menor = esq; atribuicoes++;
         } else {
-            menor = indice;
+            menor = indice; atribuicoes++;
         }
 
-        if (dir <= tamanho && vetor[dir].compareTo(vetor[menor]) < 0) {
-            menor = dir;
+        if (dir <= tamanho && vetor[dir].compareTo(vetor[menor]) < 0) { comparacoes++; comparacoes++;
+            menor = dir; atribuicoes++;
         }
 
-        if (menor != indice) {
-            Generico<?, ?> temp = vetor[menor];
-            vetor[menor] = vetor[indice];
-            vetor[indice] = temp;
+        if (menor != indice) { comparacoes++;
+            Generico<?, ?> temp = vetor[menor]; atribuicoes++;
+            vetor[menor] = vetor[indice]; atribuicoes++;
+            vetor[indice] = temp; atribuicoes++;
 
             minHeapify(vetor, menor, tamanho);
         }
@@ -86,16 +86,16 @@ public class HeapSort implements Ordenador{
 
 
 
-    private static void buildMaxHeap(Generico<?, ?>[] vetor, int tamanho) {
-        int chao = (int) Math.floor( (double) tamanho/2);
-        for (int i = chao; i >= 0; i--) {
+    private void buildMaxHeap(Generico<?, ?>[] vetor, int tamanho) {
+        int chao = (int) Math.floor( (double) tamanho/2); atribuicoes++;
+        for (int i = chao; i >= 0; i--) { atribuicoes++; comparacoes++; atribuicoes++;
             maxHeapify(vetor, i, tamanho);
         }
     }
 
-    private static void buildMinHeap(Generico<?, ?>[] vetor, int tamanho) {
-        int chao = (int) Math.floor( (double) tamanho/2);
-        for (int i = chao; i >= 0; i--) {
+    private void buildMinHeap(Generico<?, ?>[] vetor, int tamanho) {
+        int chao = (int) Math.floor( (double) tamanho/2); atribuicoes++;
+        for (int i = chao; i >= 0; i--) { atribuicoes++; comparacoes++; atribuicoes++;
             minHeapify(vetor, i, tamanho);
         }
     }

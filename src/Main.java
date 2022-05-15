@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Random;
 
-public class                                            Main {
+public class Main {
 
     public static String RandomString(int max) {// Gera strings. Fonte: https://www.programiz.com/java-programming/examples/generate-random-string
         String alphabet= "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz!@#$%*()_-+=§{}[]ªºÇç:;.><,/?°";
