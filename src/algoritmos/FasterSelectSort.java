@@ -25,18 +25,27 @@ public class FasterSelectSort implements Ordenador {
             int max = fim; atribuicoes++;
 
             for (int j = i + 1, k = fim - 1; j <= fim; j++, k--) { atribuicoes++; atribuicoes++; comparacoes++; atribuicoes++; atribuicoes++;
-                if (vetor[j].compareTo(vetor[min]) < 0) comparacoes++;
-                    min = j; atribuicoes++;
+                if (vetor[j].compareTo(vetor[min]) < 0) {
+                    comparacoes++;
+                    min = j;
+                    atribuicoes++;
+                }
 
-                if (vetor[k].compareTo(vetor[max]) > 0) comparacoes++;
-                    max = k; atribuicoes++;
+                if (vetor[k].compareTo(vetor[max]) > 0) {
+                    comparacoes++;
+                    max = k;
+                    atribuicoes++;
+                }
             }
             Generico<?, ?> temp = vetor[i]; atribuicoes++;
             vetor[i] = vetor[min]; atribuicoes++;
             vetor[min] = temp; atribuicoes++;
 
-            if (max == i) atribuicoes++;
-                max = min; atribuicoes++;
+            if (max == i) {
+                atribuicoes++;
+                max = min;
+                atribuicoes++;
+            }
 
             temp = vetor[fim]; atribuicoes++;
             vetor[fim] = vetor[max]; atribuicoes++;

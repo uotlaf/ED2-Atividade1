@@ -317,7 +317,6 @@ public class Main {
 
                     // Manda brasa!
                     long timeinicio = System.nanoTime();
-                    System.out.println("AOOOOOOOOOOBAAAAA!!!");
 
                     System.out.println("Executando algoritmo...");
                     algoritmo.sort(vetor, direcao);
